@@ -717,3 +717,239 @@ body {
 .meta-label {
     font-weight: 600;
 }
+
+/* Assignment Page Styles */
+.assignment-header-card {
+    background-color: var(--bg-card);
+    padding: 24px 20px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.assign-icon-large {
+    width: 60px;
+    height: 60px;
+    background-color: #ffebee;
+    color: #e91e63;
+    /* Pink for assignments */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 16px;
+}
+
+.assign-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--text-dark);
+}
+
+.assign-course {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.assign-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.date-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-label {
+    color: var(--text-light);
+}
+
+.date-value {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.date-row.due .date-value {
+    color: #d32f2f;
+}
+
+/* Instructions */
+.card-content {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: var(--text-dark);
+}
+
+.instruction-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.instruction-list li {
+    margin-bottom: 8px;
+}
+
+/* Status Card */
+.status-card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.status-row {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.status-row:last-child {
+    border-bottom: none;
+}
+
+.status-row.success-bg {
+    background-color: #e8f5e9;
+    border-bottom-color: #c8e6c9;
+}
+
+.status-row.success-bg-light {
+    background-color: #f1f8e9;
+}
+
+.status-label {
+    font-size: 0.75rem;
+    color: var(--text-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.status-value {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.text-success {
+    color: #2e7d32;
+}
+
+.text-muted {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+/* File Attachment */
+.file-attachment {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+.file-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.file-details {
+    flex: 1;
+    overflow: hidden;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+}
+
+.file-meta {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.comment-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.action-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--border-radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(21, 149, 185, 0.2);
+}
+
+.btn-primary:active {
+    background-color: var(--primary-dark);
+    transform: scale(0.98);
+}
+
+.btn-outline-danger {
+    background-color: transparent;
+    border: 1px solid #ffcdd2;
+    color: #d32f2f;
+}
+
+.btn-outline-danger:active {
+    background-color: #ffebee;
+}
