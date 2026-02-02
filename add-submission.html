@@ -165,7 +165,46 @@
         .action-bar {
             display: flex;
             gap: 12px;
-            margin-top: 32px;
+            margin-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        /* Polished Card Style */
+        .content-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .editor-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transition: border-color 0.2s;
+        }
+
+        .editor-container:focus-within {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+        }
+
+        .editor-toolbar {
+            background: #f8f9fa;
+            border: none;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .editor-content {
+            border: none;
+            border-radius: 0;
+        }
+
+        .editor-content:focus {
+            border-color: transparent;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -188,20 +227,20 @@
             <div class="submission-container">
 
                 <!-- Assignment Info -->
-                <div class="submission-card">
+                <div class="content-card">
                     <div class="sub-header">
                         <h2 class="sub-title">Tugas kelompok algoritma Deep Learning</h2>
                         <div class="sub-dates">Didue: Saturday, 31 January 2026, 12:00 AM</div>
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--text-medium); line-height: 1.5;">
+                    <p style="font-size: 0.95rem; color: var(--text-medium); line-height: 1.6;">
                         Buat kelompok maksimal 5 orang... pilih salah satu algoritma deep learning lalu buat video
                         durasi maksimal 10 menit.
                     </p>
                 </div>
 
                 <!-- Online Text Form -->
-                <div class="form-group" style="margin-bottom: 24px;">
-                    <label class="section-label">Online text</label>
+                <div class="content-card">
+                    <label class="section-label" style="font-size: 1rem; margin-bottom: 12px;">Online text</label>
                     <div class="editor-container">
                         <div class="editor-toolbar">
                             <button class="editor-btn"><i class="fa-solid fa-bold"></i></button>
@@ -215,22 +254,29 @@
                 </div>
 
                 <!-- File Submission -->
-                <div class="form-group">
-                    <label class="section-label">File submissions</label>
-                    <p style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 8px;">Max file size: 8 MB,
-                        maximum number of files: 20</p>
+                <div class="content-card">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <label class="section-label" style="font-size: 1rem; margin-bottom: 0;">File submissions</label>
+                        <span
+                            style="font-size: 0.75rem; color: var(--text-light); background: #f5f5f5; padding: 4px 8px; border-radius: 6px;">Max
+                            8MB</span>
+                    </div>
 
-                    <div class="file-upload-zone">
-                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <div class="file-upload-zone" style="background: #fafafa; border: 2px dashed #ddd;">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon" style="color: var(--primary-color);"></i>
                         <div class="upload-text">Tap to upload files</div>
                         <div class="upload-hint">or drag and drop here</div>
                     </div>
 
                     <!-- Existing Files (Mock) -->
                     <div class="file-list">
-                        <div class="file-item">
-                            <i class="fa-solid fa-folder file-icon" style="color: #ffca28;"></i>
-                            <span class="file-name">Files</span>
+                        <div class="file-item" style="border: none; background: #f8f9fa;">
+                            <div
+                                style="width: 32px; height: 32px; background: #fff3e0; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; color: #f57c00;">
+                                <i class="fa-solid fa-folder"></i>
+                            </div>
+                            <span class="file-name" style="font-weight: 600;">Files</span>
                         </div>
                     </div>
                 </div>
