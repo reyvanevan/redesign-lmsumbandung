@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Muhammad Luqman IF - DAMP</title>
+    <link rel="stylesheet" href="globals.css?v=3">
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .chat-room-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .chat-room-header {
+            background-color: #fff;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+
+        .chat-room-header .back-btn {
+            margin-right: 12px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .chat-user-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: #9e9e9e;
+        }
+
+        .chat-user-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .chat-options-btn {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .date-separator {
+            text-align: center;
+            position: relative;
+            margin: 16px 0;
+        }
+
+        .date-separator span {
+            background-color: transparent;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .message-incoming {
+            align-self: flex-start;
+            background-color: #fff;
+            border-bottom-left-radius: 2px;
+        }
+
+        .message-outgoing {
+            align-self: flex-end;
+            background-color: #e1e2e6;
+            /* Light gray for outgoing based on image */
+            color: var(--text-dark);
+            border-bottom-right-radius: 2px;
+        }
+
+        .msg-sender-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .msg-time {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            float: right;
+            margin-left: 8px;
+            margin-top: 6px;
+        }
+
+        .chat-input-area {
+            background-color: #fff;
+            padding: 12px 16px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-input-wrapper {
+            flex: 1;
+            position: relative;
+            border: 1px solid #bdbdbd;
+            border-radius: 24px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-input-field {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 0.95rem;
+            background: transparent;
+        }
+
+        .chat-emoji-btn {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .chat-send-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            /* Based on image icon color looks black/dark */
+            cursor: pointer;
+            transform: rotate(45deg);
+            /* Paper plane sometimes needs rotation */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-room-container">
+        <!-- Header -->
+        <header class="chat-room-header">
+            <button class="back-btn" onclick="history.back()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="chat-user-info">
+                <div class="chat-user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="chat-user-name">Muhammad Luqman IF</div>
+            </div>
+            <button class="chat-options-btn">
+                <i class="fa-solid fa-ellipsis"></i>
+            </button>
+        </header>
+
+        <!-- Messages -->
+        <div class="chat-messages">
+            <div class="date-separator">
+                <span>2 February</span>
+            </div>
+
+            <!-- Incoming -->
+            <div class="message-bubble message-incoming">
+                <span class="msg-sender-name">Muhammad Luqman IF</span>
+                <div class="msg-content">DUKK</div>
+                <div class="msg-time">18:24</div>
+            </div>
+
+            <!-- Outgoing -->
+            <div class="message-bubble message-outgoing">
+                <div class="msg-content">euy</div>
+                <div class="msg-time">18:24</div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-area">
+            <div class="chat-input-wrapper">
+                <input type="text" class="chat-input-field" placeholder="Write a message...">
+            </div>
+            <button class="chat-emoji-btn">
+                <i class="fa-regular fa-face-smile"></i>
+            </button>
+            <button class="chat-send-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scroll to bottom logic -->
+    <script>
+        window.onload = function () {
+            const messages = document.querySelector('.chat-messages');
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>
