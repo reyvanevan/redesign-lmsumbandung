@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - LMS</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <button class="icon-btn back-btn" onclick="history.back()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <h1 class="page-title">Notifications</h1>
+            <div class="header-actions">
+                <button class="icon-btn" title="Mark all as read">
+                    <i class="fa-solid fa-check-double"></i>
+                </button>
+                <button class="icon-btn" title="Settings">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="notification-list">
+
+                <!-- Notification Item 1 -->
+                <div class="notification-card unread">
+                    <div class="notif-icon-wrapper">
+                        <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                    <div class="notif-content">
+                        <h4 class="notif-title">Assignment Submitted</h4>
+                        <p class="notif-text">You have submitted your assignment submission for <strong>Tugas Capsule
+                                Networks</strong>.</p>
+                        <span class="notif-time">8 days ago</span>
+                    </div>
+                    <div class="notif-action">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Notification Item 2 -->
+                <div class="notification-card">
+                    <div class="notif-icon-wrapper">
+                        <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                    <div class="notif-content">
+                        <h4 class="notif-title">Assignment Submitted</h4>
+                        <p class="notif-text">You have submitted your assignment submission for <strong>Tugas Capsule
+                                Networks</strong>.</p>
+                        <span class="notif-time">52 days 3 hours ago</span>
+                    </div>
+                    <div class="notif-action">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Notification Item 3 -->
+                <div class="notification-card">
+                    <div class="notif-icon-wrapper">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <div class="notif-content">
+                        <h4 class="notif-title">Course Welcome</h4>
+                        <p class="notif-text">Welcome to <strong>IF22B - Pengantar Deep Learning</strong>.</p>
+                        <span class="notif-time">86 days 22 hours ago</span>
+                    </div>
+                    <div class="notif-action">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Notification Item 4 -->
+                <div class="notification-card">
+                    <div class="notif-icon-wrapper">
+                        <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                    <div class="notif-content">
+                        <h4 class="notif-title">Assignment Submitted</h4>
+                        <p class="notif-text">You have submitted your assignment submission for <strong>Tugas Pertemuan
+                                2 & 3</strong>.</p>
+                        <span class="notif-time">88 days 7 hours ago</span>
+                    </div>
+                    <div class="notif-action">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Notification Item 5 -->
+                <div class="notification-card">
+                    <div class="notif-icon-wrapper">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <div class="notif-content">
+                        <h4 class="notif-title">Welcome</h4>
+                        <p class="notif-text">Selamat Datang di <strong>IF22A - Pengantar Deep Learning</strong>.</p>
+                        <span class="notif-time">118 days 6 hours ago</span>
+                    </div>
+                    <div class="notif-action">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Notification Item 6 -->
+                <div class="notification-card">
+                    <div class="notif-icon-wrapper">
+                        <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                    <div class="notif-content">
+                        <h4 class="notif-title">Assignment Submitted</h4>
+                        <p class="notif-text">You have submitted your assignment submission for <strong>Tugas praktikum
+                                7 - individu</strong>.</p>
+                        <span class="notif-time">190 days 20 hours ago</span>
+                    </div>
+                    <div class="notif-action">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="load-more-container">
+                <button class="text-btn">See all notifications</button>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="notification-badge-wrapper">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <span class="badge">2</span>
+                </div>
+                <span>Chat</span>
+            </a>
+            <a href="notifications.html" class="nav-item active">
+                <div class="notification-badge-wrapper">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge">55</span>
+                </div>
+                <span>Notifs</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="avatar-circle">MI</div>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html>
