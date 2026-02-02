@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail - DAMP - LMS Mobile</title>
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <a href="index.html" class="header-actions">
+                <button class="icon-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+            <h1 class="page-title">Course Detail</h1>
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" style="padding: 0 0 100px 0;">
+            <!-- Course Header Card -->
+            <div class="course-header-card">
+                <h2 class="course-header-title">IF22A - Desain Antar Muka Produk Digital</h2>
+                <span class="course-header-code">Code: 1072219</span>
+
+                <div class="progress-bar-container" style="background-color: rgba(255,255,255,0.3);">
+                    <div class="progress-bar" style="width: 65%; background-color: white;"></div>
+                </div>
+                <p class="progress-text" style="color: rgba(255,255,255,0.9); margin-top: 4px; text-align: left;">65%
+                    Completed</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <div class="tab-item" onclick="switchTab('overview', this)">Overview</div>
+                    <div class="tab-item" onclick="switchTab('modules', this)">Modules</div>
+                    <div class="tab-item" onclick="switchTab('assignments', this)">Assignments</div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Overview -->
+            <div id="tab-overview" class="tab-content" style="display: none; padding: 0 20px;">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Description</h2>
+                    </div>
+                    <p style="color: var(--text-medium); line-height: 1.6; font-size: 0.9rem;">
+                        Mata kuliah Desain Antar Muka Produk Digital (DAMP) membahas prinsip-prinsip desain, metodologi
+                        UX, dan implementasi UI untuk produk digital. Mahasiswa akan belajar tentang User Flow,
+                        Wireframing, dan Prototyping.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Instructor</h2>
+                    </div>
+                    <div class="course-card" style="align-items: center;">
+                        <div class="avatar-circle"
+                            style="width: 40px; height: 40px; font-size: 1rem; margin-right: 12px;">DS</div>
+                        <div>
+                            <div class="course-title">Dosen Pengampu</div>
+                            <div class="course-meta" style="margin: 0;">Lecturer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Modules (Main List) -->
+            <div id="tab-modules" class="tab-content">
+                <div class="module-list">
+                    <!-- General -->
+                    <div class="module-item">
+                        <div class="module-header" onclick="toggleModule(this)">
+                            <h3>General</h3>
+                            <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8rem; color: var(--text-light);"></i>
+                        </div>
+                        <div class="module-content">
+                            <a href="#" class="content-item">
+                                <div class="content-icon" style="background-color: #fff3e0; color: #f57c00;">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                                <div class="content-info">
+                                    <h4>Announcements</h4>
+                                    <div class="content-meta">General news and updates</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pertemuan 1 -->
+                    <div class="module-item">
+                        <div class="module-header" onclick="toggleModule(this)">
+                            <h3>Pertemuan Ke-1</h3>
+                            <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8rem; color: var(--text-light);"></i>
+                        </div>
+                        <div class="module-content">
+                            <a href="#" class="content-item">
+                                <div class="content-icon pdf">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+                                <div class="content-info">
+                                    <h4>Pertemuan 1 - Pengantar Desain Antar Muka Produk Digital</h4>
+                                    <div class="content-meta">PDF Document</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pertemuan 2 & 3 -->
+                    <div class="module-item">
+                        <div class="module-header" onclick="toggleModule(this)">
+                            <h3>Pertemuan Ke-2 & 3</h3>
+                            <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8rem; color: var(--text-light);"></i>
+                        </div>
+                        <div class="module-content">
+                            <a href="#" class="content-item">
+                                <div class="content-icon pdf">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+                                <div class="content-info">
+                                    <h4>Pertemuan 2 & 3 - Desain Grafis</h4>
+                                    <div class="content-meta">PDF Document</div>
+                                </div>
+                            </a>
+                            <a href="#" class="content-item">
+                                <div class="content-icon assignment">
+                                    <i class="fa-solid fa-file-pen"></i>
+                                </div>
+                                <div class="content-info">
+                                    <h4>Tugas Pertemuan 2 & 3</h4>
+                                    <div class="content-meta">
+                                        <div class="meta-row"><span class="meta-label">Due:</span> 6 Nov 2025, 12:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pertemuan 4 -->
+                    <div class="module-item">
+                        <div class="module-header" onclick="toggleModule(this)">
+                            <h3>Pertemuan Ke-4</h3>
+                            <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8rem; color: var(--text-light);"></i>
+                        </div>
+                        <div class="module-content">
+                            <div class="content-item">
+                                <div class="content-icon" style="background-color: #f3e5f5; color: #8e24aa;">
+                                    <i class="fa-solid fa-users-rectangle"></i>
+                                </div>
+                                <div class="content-info">
+                                    <h4>Presentasi Kelompok</h4>
+                                    <div class="content-meta">Studi kasus yang diangkat</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pertemuan 5-7 -->
+                    <div class="module-item">
+                        <div class="module-header" onclick="toggleModule(this)">
+                            <h3>Pertemuan Ke 5-7</h3>
+                            <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8rem; color: var(--text-light);"></i>
+                        </div>
+                        <div class="module-content">
+                            <a href="#" class="content-item">
+                                <div class="content-icon pdf">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+                                <div class="content-info">
+                                    <h4>UX Research Basic</h4>
+                                    <div class="content-meta">
+                                        Research Brief, Analysis, Impact Tracking
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- UTS -->
+                    <div class="module-item">
+                        <div class="module-header" onclick="toggleModule(this)">
+                            <h3>Ujian Tengah Semester (UTS)</h3>
+                            <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8rem; color: var(--text-light);"></i>
+                        </div>
+                        <div class="module-content">
+                            <a href="#" class="content-item">
+                                <div class="content-icon assignment">
+                                    <i class="fa-solid fa-clipboard-question"></i>
+                                </div>
+                                <div class="content-info">
+                                    <h4>Soal UTS - Desain Antar Muka</h4>
+                                    <div class="content-meta">
+                                        <div class="meta-row" style="color: #d32f2f;"><span
+                                                class="meta-label">Closed:</span> 3 Dec 2025</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Assignments -->
+            <div id="tab-assignments" class="tab-content" style="display: none; padding: 0 20px;">
+                <div class="timeline-list">
+                    <!-- Active Assignment -->
+                    <div class="timeline-item">
+                        <div class="time-col">
+                            <div class="time">Feb 02</div>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon assignment">
+                                <i class="fa-solid fa-file-pen"></i>
+                            </div>
+                            <div class="task-details">
+                                <div class="task-title">Soal UAS - Digital Product</div>
+                                <div class="task-course">Due: 6:00 PM</div>
+                                <span class="status-badge due-soon">Upcoming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Past Assignment -->
+                    <div class="timeline-item">
+                        <div class="time-col">
+                            <div class="time">Nov 06</div>
+                        </div>
+                        <div class="task-card" style="opacity: 0.7;">
+                            <div class="task-icon due">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="task-details">
+                                <div class="task-title">Tugas Pertemuan 2 & 3</div>
+                                <div class="task-course">Submited</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>Chat</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <div class="notification-badge-wrapper">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <span>Notifs</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="avatar-circle">AL</div>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        // Simple Tab Switching Logic
+        function switchTab(tabName, element) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-item').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById('tab-' + tabName).style.display = 'block';
+
+            // Add active class to clicked button
+            if (element) {
+                element.classList.add('active');
+            }
+        }
+
+        // Module Toggle Logic
+        function toggleModule(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.fa-chevron-down');
+
+            // Get computed style to ensure we know the current state
+            const display = window.getComputedStyle(content).display;
+
+            if (display === 'none') {
+                content.style.display = 'block';
+                icon.style.transform = 'rotate(0deg)';
+                icon.style.transition = 'transform 0.2s';
+            } else {
+                content.style.display = 'none';
+                icon.style.transform = 'rotate(-90deg)';
+                icon.style.transition = 'transform 0.2s';
+            }
+        }
+
+        // Initialize: Set Modules as active programmatically
+        document.addEventListener('DOMContentLoaded', () => {
+            // Find the modules tab button
+            const tabs = document.querySelectorAll('.tab-item');
+            // 0: Overview, 1: Modules, 2: Assignments
+
+            // Trigger click on Modules to set state correctly
+            if (tabs[1]) tabs[1].click();
+        });
+    </script>
+</body>
+
+</html>

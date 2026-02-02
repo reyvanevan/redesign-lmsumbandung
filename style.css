@@ -40,8 +40,6 @@ body {
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
-    padding-bottom: calc(var(--nav-height) + 20px);
-    /* Space for bottom nav */
 }
 
 .app-container {
@@ -105,7 +103,8 @@ body {
 
 /* Main Content */
 .main-content {
-    padding: 8px 20px;
+    padding: 8px 20px 100px 20px;
+    /* Top Right Bottom Left */
 }
 
 .section {
@@ -178,6 +177,7 @@ body {
     /* Align top */
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .course-card:active {
@@ -543,4 +543,177 @@ body {
     font-weight: 600;
     cursor: pointer;
     font-size: 0.9rem;
+}
+
+/* Course Detail Specifics */
+.course-header-card {
+    background-color: var(--bg-card);
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border-radius: 0 0 24px 24px;
+    box-shadow: var(--shadow-md);
+}
+
+.course-header-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.course-header-code {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 16px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Tabs */
+.tabs-container {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.tabs-header {
+    display: flex;
+    background-color: var(--bg-card);
+    padding: 4px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-medium);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-item.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Accordion/Modules */
+.module-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 20px 20px;
+    /* Bottom padding for nav */
+}
+
+.module-item {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.module-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.module-header:active {
+    background-color: #f8f9fa;
+}
+
+.module-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.module-content {
+    border-top: 1px solid #f0f0f0;
+}
+
+.content-item {
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s;
+}
+
+.content-item:active {
+    background-color: #f8f9fa;
+}
+
+.content-item:last-child {
+    border-bottom: none;
+}
+
+.content-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: #e3f2fd;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.content-icon.pdf {
+    background-color: #ffebee;
+    color: #e53935;
+}
+
+.content-icon.assignment {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.content-info {
+    flex: 1;
+}
+
+.content-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-dark);
+}
+
+.content-meta {
+    font-size: 0.75rem;
+    color: var(--text-medium);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.meta-row {
+    display: flex;
+    gap: 4px;
+}
+
+.meta-label {
+    font-weight: 600;
 }
