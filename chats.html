@@ -50,79 +50,12 @@
             box-shadow: 0 2px 8px rgba(var(--primary-rgb), 0.1);
         }
 
-        /* Pinned Section (Stories Style) */
-        .pinned-section {
-            display: flex;
-            overflow-x: auto;
-            padding: 10px 20px 20px 20px;
-            background-color: #fff;
-            gap: 16px;
-            scrollbar-width: none;
-            /* Hide scrollbar Firefox */
-        }
 
-        .pinned-section::-webkit-scrollbar {
-            display: none;
-            /* Hide scrollbar Chrome */
-        }
-
-        .pinned-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 64px;
-            cursor: pointer;
-        }
-
-        .pinned-avatar-wrapper {
-            position: relative;
-            margin-bottom: 6px;
-        }
-
-        .pinned-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border: 2px solid #fff;
-            box-shadow: 0 0 0 2px var(--primary-color);
-            /* Ring effect */
-        }
-
-        .pinned-name {
-            font-size: 0.75rem;
-            color: var(--text-dark);
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%;
-            font-weight: 500;
-        }
-
-        .online-dot {
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            width: 14px;
-            height: 14px;
-            background-color: #4caf50;
-            border: 2px solid #fff;
-            border-radius: 50%;
-        }
 
         /* Recent Messages List redesign */
         .recent-section {
             background-color: #fff;
-            border-top-left-radius: 24px;
-            border-top-right-radius: 24px;
-            padding-top: 20px;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.03);
-            /* Card lift effect */
+            padding-top: 10px;
             min-height: 400px;
             /* Ensure visual content */
         }
@@ -259,39 +192,7 @@
                 <input type="text" class="chat-search-input" placeholder="Search chats...">
             </div>
 
-            <!-- Horizontal Pinned Section (New Feature) -->
-            <div class="pinned-section">
-                <!-- Add New Story -->
-                <div class="pinned-item">
-                    <div class="pinned-avatar-wrapper">
-                        <div class="pinned-avatar"
-                            style="border: 2px solid #e0e0e0; box-shadow: none; color: #bdbdbd; background-color: #fafafa;">
-                            <i class="fa-solid fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="pinned-name" style="color: var(--text-light)">New</div>
-                </div>
 
-                <!-- Dosen Wali (Pinned) -->
-                <div class="pinned-item" onclick="window.location.href='chat-dosen.html'">
-                    <div class="pinned-avatar-wrapper">
-                        <div class="pinned-avatar" style="background-color: #f3e5f5; color: #8e24aa;">DW</div>
-                        <div class="online-dot"></div>
-                    </div>
-                    <div class="pinned-name">Dosen Wali</div>
-                </div>
-
-                <!-- Edes (Direct) -->
-                <div class="pinned-item">
-                    <div class="pinned-avatar-wrapper">
-                        <div class="pinned-avatar" style="background-color: #fff3e0; color: #ef6c00;">
-                            <img src="https://ui-avatars.com/api/?name=Elga&background=ffecb3&color=ff6f00" alt="E"
-                                style="width:100%; height:100%; border-radius:50%;">
-                        </div>
-                    </div>
-                    <div class="pinned-name">Elga</div>
-                </div>
-            </div>
 
             <!-- Recent Messages List (Unified) -->
             <div class="recent-section">
