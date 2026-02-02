@@ -1,877 +1,185 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Dashboard</title>
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="element-default">
-        <div class="container">
-            <div class="div">
-                <div class="margin">
-                    <div class="background">
-                        <div class="container-wrapper">
-                            <div class="button-wrapper">
-                                <button class="button">
-                                    <div class="symbol-wrapper">
-                                        <div class="symbol"></div>
-                                    </div>
-                                </button>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <button class="icon-btn back-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <h1 class="page-title">Dashboard</h1>
+            <div class="header-actions">
+                <!-- Spacer for balance or extra action -->
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Course Overview Section -->
+            <section class="section course-overview">
+                <div class="section-header">
+                    <h2>Course Overview</h2>
+                    <button class="icon-btn filter-btn">
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search courses...">
+                </div>
+
+                <!-- Course List -->
+                <div class="course-list">
+                    <!-- Course Card 1 -->
+                    <article class="course-card">
+                        <div class="course-image" style="background-color: #e3f2fd;">
+                            <i class="fa-solid fa-laptop-code course-icon" style="color: #1565c0;"></i>
+                        </div>
+                        <div class="course-info">
+                            <h3 class="course-title">IF22A - Desain Antar Muka Produk Digital</h3>
+                            <p class="course-meta">TA 2025/2026 - Gasal</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 45%;"></div>
+                            </div>
+                            <p class="progress-text">45% Complete</p>
+                        </div>
+                        <button class="icon-btn more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </article>
+
+                    <!-- Course Card 2 -->
+                    <article class="course-card">
+                        <div class="course-image" style="background-color: #f3e5f5;">
+                            <i class="fa-solid fa-gamepad course-icon" style="color: #6a1b9a;"></i>
+                        </div>
+                        <div class="course-info">
+                            <h3 class="course-title">IF22A - Desain dan Teknologi Game</h3>
+                            <p class="course-meta">TA 2025/2026 - Gasal</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 75%;"></div>
+                            </div>
+                            <p class="progress-text">75% Complete</p>
+                        </div>
+                        <button class="icon-btn more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </article>
+
+                    <!-- Course Card 3 -->
+                    <article class="course-card">
+                        <div class="course-image" style="background-color: #e8f5e9;">
+                            <i class="fa-solid fa-chart-line course-icon" style="color: #2e7d32;"></i>
+                        </div>
+                        <div class="course-info">
+                            <h3 class="course-title">IF22A - Digitalisasi UMKM</h3>
+                            <p class="course-meta">TA 2025/2026 - Gasal</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 10%;"></div>
+                            </div>
+                            <p class="progress-text">10% Complete</p>
+                        </div>
+                        <button class="icon-btn more-btn">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Timeline/Assignments Section -->
+            <section class="section timeline">
+                <div class="section-header">
+                    <h2>Timeline</h2>
+                    <div class="timeline-actions">
+                        <span class="filter-badge">Next 7 Days <i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+                </div>
+
+                <div class="timeline-list">
+                    <!-- Timeline Item -->
+                    <div class="timeline-group">
+                        <h4 class="timeline-date">Monday, 2 February 2026</h4>
+                        <div class="timeline-item">
+                            <div class="time-col">
+                                <span class="time">23:59</span>
+                            </div>
+                            <div class="task-card">
+                                <div class="task-icon due">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div class="task-details">
+                                    <h4 class="task-title">Tugas Redesign</h4>
+                                    <p class="task-course">IF22A - Desain Antar Muka...</p>
+                                    <span class="status-badge due-soon">Due Soon</span>
+                                </div>
                             </div>
                         </div>
-                        <header class="header">
-                            <div class="margin-wrapper">
-                                <div class="margin-2"></div>
+                    </div>
+
+                    <!-- Timeline Item -->
+                    <div class="timeline-group">
+                        <h4 class="timeline-date">Thursday, 5 February 2026</h4>
+                        <div class="timeline-item">
+                            <div class="time-col">
+                                <span class="time">00:00</span>
                             </div>
-                            <div class="container-2">
-                                <div class="div-wrapper">
-                                    <div class="container-3">
-                                        <div class="heading-dashboard-wrapper">
-                                            <div class="heading-dashboard">Dashboard</div>
-                                        </div>
-                                    </div>
+                            <div class="task-card">
+                                <div class="task-icon assignment">
+                                    <i class="fa-solid fa-file-lines"></i>
                                 </div>
-                                <div class="margin-3"></div>
-                            </div>
-                        </header>
-                        <div class="section-content-main">
-                            <div class="complementary">
-                                <div class="container-4">
-                                    <div class="text-wrapper">Course overview</div>
-                                    <div class="navigation">
-                                        <div class="separator"></div>
-                                        <div class="search-course">
-                                            <div class="container-5">
-                                                <div class="margin-4">
-                                                    <div class="container-6">
-                                                        <div class="button-menu-grouping">
-                                                            <div class="all-wrapper">
-                                                                <div class="text-wrapper-2">All</div>
-                                                            </div>
-                                                            <div class="container-7">
-                                                                <div class="symbol-2"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-4">
-                                                    <div class="container-6">
-                                                        <div class="search-wrapper">
-                                                            <div class="search">
-                                                                <div class="input">
-                                                                    <input class="container-8" placeholder="Search"
-                                                                        type="text" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-4">
-                                                    <div class="container-9">
-                                                        <div class="container-10">
-                                                            <div class="button-menu-sorting">
-                                                                <div class="sort-by-course-name-wrapper">
-                                                                    <div class="text-wrapper-2">Sort by course name
-                                                                    </div>
-                                                                </div>
-                                                                <div class="container-11">
-                                                                    <div class="symbol-2"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-5">
-                                                    <div class="container-6">
-                                                        <div class="button-menu-display">
-                                                            <div class="card-wrapper">
-                                                                <div class="text-wrapper-2">Card</div>
-                                                            </div>
-                                                            <div class="container-12">
-                                                                <div class="symbol-2"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="container-13">
-                                            <div class="list">
-                                                <div class="listitem-wrapper">
-                                                    <div class="listitem">
-                                                        <img class="link" src="img/link-8.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-15">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-3">IF22A-Desain Antar Muka
-                                                                        Produk<br />Digital-107221</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-6">
-                                                    <div class="listitem">
-                                                        <img class="link" src="img/link-5.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-15">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-3">IF22A-Desain dan
-                                                                        Teknologi Game-<br />1072209</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-7">
-                                                    <div class="listitem">
-                                                        <img class="link" src="img/link-2.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-19">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-6">IF22A-Digitalisasi
-                                                                        UMKM-1072203</div>
-                                                                </div>
-                                                                <div class="container-20">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-2">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-8">
-                                                    <div class="listitem">
-                                                        <img class="link" src="img/link-7.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-15">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-3">IF22A-Pengantar Deep
-                                                                        Learning-<br />1072207</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-2">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-9">
-                                                    <div class="listitem-2">
-                                                        <img class="link" src="img/link-9.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-21">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-3">IF22A-Pengolahan Citra
-                                                                        Digital-<br />107221</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-3">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-10">
-                                                    <div class="listitem-2">
-                                                        <img class="link" src="img/link-10.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-21">
-                                                                <div class="link-2">
-                                                                    <div class="praktikum">IF22A-Praktikum Desain
-                                                                        dan<br />Teknologi Game-1072211</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-3">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-11">
-                                                    <div class="listitem">
-                                                        <img class="link" src="img/link-3.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-15">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-7">
-                                                                        IF22A-Praktikum Pengolahan
-                                                                        Citra<br />Digital-107221
-                                                                    </div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-2">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-12">
-                                                    <div class="listitem">
-                                                        <img class="link" src="img/link-11.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-19">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-8">IF22A-Visualisasi
-                                                                        Data-1072201</div>
-                                                                </div>
-                                                                <div class="container-20">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="background-wrapper">
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-2">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-13">
-                                                    <div class="listitem-2">
-                                                        <img class="link" src="img/link.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-21">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-3">IF22B-Pengantar Deep
-                                                                        Learning-<br />107220</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-22">
-                                                            <div class="background-3">
-                                                                <div class="div-2">
-                                                                    <div class="text-wrapper-9">91% complete</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-3">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-14">
-                                                    <div class="listitem-2">
-                                                        <img class="link" src="img/link-4.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-21">
-                                                                <div class="link-2">
-                                                                    <div class="text-wrapper-7">IF24B-Manajemen Basis
-                                                                        Data-<br />1072406</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-22">
-                                                            <div class="background-3">
-                                                                <div class="div-2">
-                                                                    <div class="text-wrapper-9">100% complete</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-3">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-15">
-                                                    <div class="listitem">
-                                                        <img class="link" src="img/link-6.svg" />
-                                                        <div class="container-14">
-                                                            <div class="container-15">
-                                                                <div class="link-2">
-                                                                    <div class="ifb-praktikum">IF24B-Praktikum Manajemen
-                                                                        Basis<br />Data-107240</div>
-                                                                </div>
-                                                                <div class="container-16">
-                                                                    <div class="container-17">
-                                                                        <div class="text-wrapper-4">TA 2025/2026-Gasal
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-22">
-                                                            <div class="background-4">
-                                                                <div class="div-2">
-                                                                    <div class="text-wrapper-9">0% complete</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="background-2">
-                                                                <div class="container-10">
-                                                                    <div class="button-menu-2">
-                                                                        <div class="container-18">
-                                                                            <div class="text-wrapper-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="div-3">
-                                                <div class="div-4">
-                                                    <div class="margin-16">
-                                                        <div class="text-wrapper-10">Show</div>
-                                                    </div>
-                                                    <div class="button-menu-show-wrapper">
-                                                        <div class="button-menu-show">
-                                                            <div class="text-wrapper-11">12</div>
-                                                            <div class="container-7">
-                                                                <div class="symbol-2"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="complementary-2">
-                                <div class="container-23">
-                                    <div class="text-wrapper">Latest announcement</div>
-                                    <div class="div-2">
-                                        <p class="p">(No announcements have been posted yet.)</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="complementary-2">
-                                <div class="container-24">
-                                    <div class="text-wrapper">Timeline</div>
-                                    <div class="container-25">
-                                        <div class="container-26">
-                                            <div class="container-27">
-                                                <div class="margin-17">
-                                                    <div class="container-6">
-                                                        <div class="button-menu-filter">
-                                                            <div class="next-days-wrapper">
-                                                                <div class="text-wrapper-2">Next 7 days</div>
-                                                            </div>
-                                                            <div class="container-28">
-                                                                <div class="symbol-2"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-18">
-                                                    <div class="container-6">
-                                                        <div class="button-menu-sort">
-                                                            <div class="sort-by-dates-wrapper">
-                                                                <div class="text-wrapper-2">Sort by dates</div>
-                                                            </div>
-                                                            <div class="container-29">
-                                                                <div class="symbol-2"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="margin-19">
-                                                    <div class="container-30">
-                                                        <div class="container-31">
-                                                            <div class="input-wrapper">
-                                                                <div class="input-2">
-                                                                    <input class="container-32"
-                                                                        placeholder="Search by activity type or nam"
-                                                                        type="text" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="horizontal-border"></div>
-                                        </div>
-                                        <div class="container-33">
-                                            <div class="heading-monday-wrapper">
-                                                <div class="text-wrapper-12">Monday, 2 February 202</div>
-                                            </div>
-                                            <div class="background-5">
-                                                <div class="container-34">
-                                                    <div class="container-35">
-                                                        <div class="div-4">
-                                                            <div class="small-margin">
-                                                                <div class="small">
-                                                                    <div class="text-wrapper-13">23:59</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <img class="img" src="img/image.svg" />
-                                                        <div class="container-36">
-                                                            <div class="heading-wrapper">
-                                                                <div class="heading">
-                                                                    <div class="div-wrapper-2">
-                                                                        <div class="text-wrapper-14">Tugas Redesign
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <p class="small-assignment-is">
-                                                                Assignment is due · IF22A-Desain Antar Muka Produk
-                                                                Digital-1072
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="margin-20">
-                                                        <div class="container-37">
-                                                            <div class="link-add-submission-wrapper">
-                                                                <div class="link-add-submission">
-                                                                    <div class="text-wrapper-15">Add submission</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="horizontal-border-2"></div>
-                                            </div>
-                                            <div class="heading-thursday-wrapper">
-                                                <div class="text-wrapper-12">Thursday, 5 February 202</div>
-                                            </div>
-                                            <div class="background-5">
-                                                <div class="container-34">
-                                                    <div class="margin-21">
-                                                        <div class="container-38">
-                                                            <div class="div-4">
-                                                                <div class="small-margin">
-                                                                    <div class="small">
-                                                                        <div class="text-wrapper-13">00:00</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <img class="img" src="img/margin-align-center.svg" />
-                                                            <div class="container-36">
-                                                                <div class="div-3">
-                                                                    <div class="link-TUGAS-BESAR-wrapper">
-                                                                        <div class="div-wrapper-2">
-                                                                            <div class="text-wrapper-14">TUGAS BESAR
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <p class="small-assignment-is-2">
-                                                                    Assignment is due · IF22B-Pengantar Deep
-                                                                    Learning-1072208
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="margin-20">
-                                                        <div class="container-37">
-                                                            <div class="link-add-submission-wrapper">
-                                                                <div class="link-add-submission">
-                                                                    <div class="text-wrapper-15">Add submission</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="horizontal-border-2"></div>
-                                            </div>
-                                            <div class="heading-friday-wrapper">
-                                                <div class="text-wrapper-12">Friday, 6 February 202</div>
-                                            </div>
-                                            <div class="background-5">
-                                                <div class="container-34">
-                                                    <div class="margin-22">
-                                                        <div class="container-38">
-                                                            <div class="div-4">
-                                                                <div class="small-margin">
-                                                                    <div class="small">
-                                                                        <div class="text-wrapper-13">00:00</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <img class="img" src="img/margin-align-center-2.svg" />
-                                                            <div class="container-36">
-                                                                <div class="div-3">
-                                                                    <div class="link-tugas-besar-UAS-wrapper">
-                                                                        <div class="div-wrapper-2">
-                                                                            <div class="text-wrapper-14">Tugas Besar UAS
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <p class="small-assignment-is-2">
-                                                                    Assignment is due · IF22A-Pengantar Deep
-                                                                    Learning-1072207
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="margin-20">
-                                                        <div class="container-37">
-                                                            <div class="link-add-submission-wrapper">
-                                                                <div class="link-add-submission">
-                                                                    <div class="text-wrapper-15">Add submission</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="horizontal-border-2"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="complementary-2">
-                                <div class="container-39">
-                                    <div class="text-wrapper">Online user</div>
-                                    <div class="container-40">
-                                        <div class="container-41">
-                                            <p class="text-wrapper-16">4 online users (last 5 minutes)</p>
-                                        </div>
-                                        <div class="list-2">
-                                            <div class="item">
-                                                <div class="link-wrapper">
-                                                    <div class="link-3">
-                                                        <div class="div-wrapper-3">
-                                                            <div class="text-wrapper-17">MI</div>
-                                                        </div>
-                                                        <div class="text-wrapper-18">Muhammad Luqman I</div>
-                                                    </div>
-                                                </div>
-                                                <div class="container-42">
-                                                    <div class="link-4">
-                                                        <div class="symbol-wrapper-2">
-                                                            <div class="symbol-3"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-2">
-                                                <div class="container-43">
-                                                    <div class="link-5">
-                                                        <div class="f"></div>
-                                                        <div class="text-wrapper-19">Rizqi Fatahillah Kautsar I</div>
-                                                    </div>
-                                                </div>
-                                                <div class="container-44">
-                                                    <div class="link-4">
-                                                        <div class="symbol-wrapper-2">
-                                                            <div class="symbol-3"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-2">
-                                                <div class="container-45">
-                                                    <div class="link-6">
-                                                        <div class="div-wrapper-3">
-                                                            <div class="text-wrapper-17">MI</div>
-                                                        </div>
-                                                        <p class="text-wrapper-20">Muhammad Daffa Prassetyo Haryanto
-                                                            IF2024</p>
-                                                    </div>
-                                                </div>
-                                                <div class="container-44">
-                                                    <div class="link-4">
-                                                        <div class="symbol-wrapper-2">
-                                                            <div class="symbol-3"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item-2">
-                                                <div class="container-46">
-                                                    <div class="link-7">
-                                                        <div class="div-wrapper-3">
-                                                            <div class="text-wrapper-21">SI</div>
-                                                        </div>
-                                                        <div class="text-wrapper-22">Sabila Alfianisa IF23</div>
-                                                    </div>
-                                                </div>
-                                                <div class="container-44">
-                                                    <div class="link-4">
-                                                        <div class="symbol-wrapper-2">
-                                                            <div class="symbol-3"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="task-details">
+                                    <h4 class="task-title">TUGAS BESAR</h4>
+                                    <p class="task-course">IF22B - Pengantar Deep L...</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <footer class="footer">
-                    <div class="button-show-footer">
-                        <div class="container-47">
-                            <div class="text-wrapper-5">?</div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-            <div class="nav-site-navigation">
-                <div class="container-48">
-                    <img class="button-margin" src="img/button-margin.svg" />
-                    <div class="margin-23">
-                        <div class="container-49">
-                            <div class="button-menu-show-2">
-                                <div class="symbol-wrapper-3">
-                                    <div class="symbol-4"></div>
-                                </div>
-                                <div class="background-6">
-                                    <div class="text-wrapper-23">55</div>
-                                </div>
-                            </div>
-                            <button class="img-toggle-messaging-wrapper">
-                                <div class="symbol-wrapper-3">
-                                    <div class="symbol-4"></div>
-                                </div>
-                            </button>
-                            <div class="button-menu-user">
-                                <div class="img-muhammad-luqman-wrapper">
-                                    <div class="img-muhammad-luqman">
-                                        <div class="text-wrapper-24">MI</div>
-                                    </div>
-                                </div>
-                                <div class="margin-24">
-                                    <div class="container-50">
-                                        <div class="symbol-5"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img class="form" src="img/form.svg" />
-                        </div>
-                    </div>
+            </section>
+
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="notification-badge-wrapper">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <span class="badge">2</span>
                 </div>
-            </div>
-        </div>
-        <div class="container-51">
-            <div class="section-blocks-aside-wrapper">
-                <div class="section-blocks-aside">
-                    <div class="complementary-2">
-                        <div class="container-52">
-                            <div class="text-wrapper">Private files</div>
-                            <div class="container-53">
-                                <div class="container-54">
-                                    <div class="text-wrapper-25">No files available</div>
-                                </div>
-                                <div class="container-55">
-                                    <div class="div-3">
-                                        <div class="text-wrapper-26">Manage private files...</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="complementary-2">
-                        <div class="container-56">
-                            <div class="text-wrapper">Recently accessed items</div>
-                            <div class="container-57">
-                                <div class="div-2">
-                                    <div class="listitem-3">
-                                        <div class="link-8">
-                                            <div class="div-3">
-                                                <img class="img" src="img/container-align-center-3.svg" />
-                                                <div class="margin-25">
-                                                    <div class="container-58">
-                                                        <div class="div-2">
-                                                            <div class="text-wrapper-27">Soal UAS_Desain Antar</div>
-                                                        </div>
-                                                        <div class="small-2">
-                                                            <div class="text-wrapper-28">IF22A-Desain Antar Muka Pro
-                                                            </div>
-                                                            <div class="text-wrapper-29">…</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listitem-4">
-                                        <div class="link-8">
-                                            <div class="div-3">
-                                                <img class="img" src="img/container-align-center-2.svg" />
-                                                <div class="margin-25">
-                                                    <div class="container-58">
-                                                        <div class="div-2">
-                                                            <div class="text-wrapper-27">Soal UTS_Desain Antar</div>
-                                                        </div>
-                                                        <div class="small-3">
-                                                            <div class="text-wrapper-28">IF22A-Desain Antar Muka Pro
-                                                            </div>
-                                                            <div class="text-wrapper-29">…</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listitem-5">
-                                        <div class="link-8">
-                                            <div class="div-3">
-                                                <img class="img" src="img/container-align-center.svg" />
-                                                <div class="margin-25">
-                                                    <div class="container-58">
-                                                        <div class="div-2">
-                                                            <div class="text-wrapper-27">UAS Basis Data</div>
-                                                        </div>
-                                                        <div class="small-4">
-                                                            <div class="text-wrapper-30">IF24B-Praktikum Manajemen B
-                                                            </div>
-                                                            <div class="text-wrapper-31">…</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="container-59">
-                                    <button class="button-2">
-                                        <div class="text-wrapper-32">Show more items</div>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <span>Chat</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="notification-badge-wrapper">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge">55</span>
                 </div>
-            </div>
-        </div>
+                <span>Notifs</span>
+            </a>
+            <a href="#" class="nav-item">
+                <div class="avatar-circle">MI</div>
+                <span>Profile</span>
+            </a>
+        </nav>
     </div>
 </body>
 
