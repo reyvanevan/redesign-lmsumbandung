@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Submission - DAMP - LMS Mobile</title>
+    <link rel="stylesheet" href="globals.css?v=3">
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Submission specific styles */
+        .submission-container {
+            padding: 20px;
+        }
+
+        .submission-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        .sub-header {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 12px;
+        }
+
+        .sub-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .sub-dates {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .editor-toolbar {
+            display: flex;
+            gap: 12px;
+            padding: 8px;
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom: none;
+            overflow-x: auto;
+        }
+
+        .editor-btn {
+            background: none;
+            border: none;
+            color: var(--text-medium);
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 4px;
+        }
+
+        .editor-content {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #e0e0e0;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding: 12px;
+            font-family: inherit;
+            resize: vertical;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        .editor-content:focus {
+            border-color: var(--primary-color);
+        }
+
+        .file-upload-zone {
+            border: 2px dashed #bdbdbd;
+            border-radius: 12px;
+            padding: 32px 20px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: all 0.2s;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .file-upload-zone:active {
+            background-color: #f0f0f0;
+            border-color: var(--primary-color);
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .upload-text {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .upload-hint {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        .section-label {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .file-list {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .file-icon {
+            color: #1976d2;
+            /* Word blue */
+            font-size: 1.2rem;
+            margin-right: 12px;
+        }
+
+        .file-name {
+            flex: 1;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .file-remove {
+            color: #ef5350;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .action-bar {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <button class="icon-btn back-btn" onclick="history.back()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1 class="page-title">Edit submission</h1>
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fa-regular fa-circle-question"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" style="padding-bottom: 40px;">
+            <div class="submission-container">
+
+                <!-- Assignment Info -->
+                <div class="submission-card">
+                    <div class="sub-header">
+                        <h2 class="sub-title">Tugas kelompok algoritma Deep Learning</h2>
+                        <div class="sub-dates">Didue: Saturday, 31 January 2026, 12:00 AM</div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-medium); line-height: 1.5;">
+                        Buat kelompok maksimal 5 orang... pilih salah satu algoritma deep learning lalu buat video
+                        durasi maksimal 10 menit.
+                    </p>
+                </div>
+
+                <!-- Online Text Form -->
+                <div class="form-group" style="margin-bottom: 24px;">
+                    <label class="section-label">Online text</label>
+                    <div class="editor-container">
+                        <div class="editor-toolbar">
+                            <button class="editor-btn"><i class="fa-solid fa-bold"></i></button>
+                            <button class="editor-btn"><i class="fa-solid fa-italic"></i></button>
+                            <button class="editor-btn"><i class="fa-solid fa-list-ul"></i></button>
+                            <button class="editor-btn"><i class="fa-solid fa-link"></i></button>
+                            <button class="editor-btn"><i class="fa-solid fa-image"></i></button>
+                        </div>
+                        <textarea class="editor-content" placeholder="Write your submission text here..."></textarea>
+                    </div>
+                </div>
+
+                <!-- File Submission -->
+                <div class="form-group">
+                    <label class="section-label">File submissions</label>
+                    <p style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 8px;">Max file size: 8 MB,
+                        maximum number of files: 20</p>
+
+                    <div class="file-upload-zone">
+                        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                        <div class="upload-text">Tap to upload files</div>
+                        <div class="upload-hint">or drag and drop here</div>
+                    </div>
+
+                    <!-- Existing Files (Mock) -->
+                    <div class="file-list">
+                        <div class="file-item">
+                            <i class="fa-solid fa-folder file-icon" style="color: #ffca28;"></i>
+                            <span class="file-name">Files</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="action-bar">
+                    <button class="btn btn-primary" onclick="window.location.href='assignment.html'"
+                        style="flex: 2;">Save changes</button>
+                    <button class="btn btn-outline" onclick="history.back()"
+                        style="flex: 1; border: 1px solid #e0e0e0;">Cancel</button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
