@@ -9,95 +9,163 @@
     <link rel="stylesheet" href="style.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Modern Header */
+        .app-header {
+            box-shadow: none;
+            border-bottom: none;
+        }
+
+        .page-title {
+            font-size: 1.5rem;
+            text-align: left;
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        /* Search Bar Redesign */
         .chat-search-container {
-            padding: 16px 20px;
+            padding: 0 20px 10px 20px;
             background-color: #fff;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: none;
         }
 
         .chat-search-input {
             width: 100%;
-            padding: 10px 16px 10px 40px;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            background-color: #f5f5f5;
+            padding: 12px 16px 12px 44px;
+            border-radius: 24px;
+            /* Pill shape */
+            border: 1px solid #f0f0f0;
+            background-color: #f9f9f9;
             font-size: 0.95rem;
             outline: none;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%239e9e9e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
             background-repeat: no-repeat;
-            background-position: 12px center;
+            background-position: 16px center;
+            transition: all 0.2s;
         }
 
-        .contacts-link {
-            display: flex;
-            justify-content: flex-end;
-            padding: 12px 20px;
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .chat-section {
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .chat-section-header {
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            color: var(--text-dark);
-            cursor: pointer;
+        .chat-search-input:focus {
             background-color: #fff;
+            border-color: var(--primary-color);
+            box-shadow: 0 2px 8px rgba(var(--primary-rgb), 0.1);
         }
 
-        .chat-section-header i {
-            font-size: 0.8rem;
-            transition: transform 0.2s;
+        /* Pinned Section (Stories Style) */
+        .pinned-section {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 20px 20px 20px;
+            background-color: #fff;
+            gap: 16px;
+            scrollbar-width: none;
+            /* Hide scrollbar Firefox */
         }
 
-        .chat-section-header.collapsed i {
-            transform: rotate(-90deg);
-        }
-
-        .chat-list {
-            display: block;
-        }
-
-        .chat-list.hidden {
+        .pinned-section::-webkit-scrollbar {
             display: none;
+            /* Hide scrollbar Chrome */
+        }
+
+        .pinned-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 64px;
+            cursor: pointer;
+        }
+
+        .pinned-avatar-wrapper {
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .pinned-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--primary-color);
+            /* Ring effect */
+        }
+
+        .pinned-name {
+            font-size: 0.75rem;
+            color: var(--text-dark);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            font-weight: 500;
+        }
+
+        .online-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 14px;
+            height: 14px;
+            background-color: #4caf50;
+            border: 2px solid #fff;
+            border-radius: 50%;
+        }
+
+        /* Recent Messages List redesign */
+        .recent-section {
+            background-color: #fff;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            padding-top: 20px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.03);
+            /* Card lift effect */
+            min-height: 400px;
+            /* Ensure visual content */
+        }
+
+        .section-label {
+            padding: 0 24px 12px 24px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .chat-item {
             display: flex;
             align-items: center;
-            padding: 12px 20px;
-            background-color: #fff;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 14px 24px;
+            /* More breathing room */
+            background-color: transparent;
+            border-bottom: none;
+            /* Remove separators for cleaner look */
             cursor: pointer;
             transition: background-color 0.2s;
         }
 
         .chat-item:active {
-            background-color: #f9f9f9;
+            background-color: #f5f5f5;
         }
 
         .chat-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            /* Squircle */
             background-color: #f0f0f0;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 12px;
+            margin-right: 16px;
             color: #bdbdbd;
             font-size: 1.2rem;
             flex-shrink: 0;
+            position: relative;
         }
 
         .chat-info {
@@ -108,118 +176,199 @@
             font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 4px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             display: flex;
             justify-content: space-between;
         }
 
         .chat-time {
-            font-weight: 400;
+            font-weight: 500;
             font-size: 0.75rem;
             color: var(--text-light);
+            text-transform: lowercase;
         }
 
         .chat-preview {
             color: var(--text-medium);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .chat-chevron {
-            color: var(--text-light);
-            font-size: 0.8rem;
+        .chat-preview span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+
+        .unread-badge {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+        }
+
+        .floating-fab {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .floating-fab:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 
 <body>
     <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <button class="icon-btn back-btn" onclick="history.back()">
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
+        <!-- New Modern Header -->
+        <header class="app-header" style="justify-content: space-between; padding: 20px 0 10px 0;">
             <h1 class="page-title">Messages</h1>
-            <div class="header-actions">
-                <button class="icon-btn"><i class="fa-solid fa-gear"></i></button>
+            <div class="header-actions" style="padding-right: 20px;">
+                <button class="icon-btn" onclick="window.location.href='contacts.html'"><i
+                        class="fa-regular fa-address-book"></i></button>
             </div>
         </header>
 
         <!-- Main Content -->
         <main class="main-content" style="padding: 0 0 100px 0;">
+
             <div class="chat-search-container">
-                <input type="text" class="chat-search-input" placeholder="Search">
+                <input type="text" class="chat-search-input" placeholder="Search chats...">
             </div>
 
-            <div class="contacts-link" onclick="window.location.href='contacts.html'">
-                <i class="fa-solid fa-user"></i> Contacts
-            </div>
-
-            <!-- Starred -->
-            <div class="chat-section">
-                <div class="chat-section-header collapsed" onclick="toggleSection(this)">
-                    <i class="fa-solid fa-caret-down"></i>
-                    <span>Starred (1)</span>
+            <!-- Horizontal Pinned Section (New Feature) -->
+            <div class="pinned-section">
+                <!-- Add New Story -->
+                <div class="pinned-item">
+                    <div class="pinned-avatar-wrapper">
+                        <div class="pinned-avatar"
+                            style="border: 2px solid #e0e0e0; box-shadow: none; color: #bdbdbd; background-color: #fafafa;">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="pinned-name" style="color: var(--text-light)">New</div>
                 </div>
-                <div class="chat-list hidden">
-                    <!-- Placeholder for starred -->
-                    <div class="chat-item">
-                        <div class="chat-avatar"><i class="fa-solid fa-user"></i></div>
-                        <div class="chat-info">
-                            <div class="chat-name">
-                                Dosen Wali
-                                <span class="chat-time">Yesterday</span>
-                            </div>
-                            <div class="chat-preview">
-                                <span>Please submit your KRS...</span>
-                                <i class="fa-solid fa-chevron-right chat-chevron"></i>
-                            </div>
+
+                <!-- Dosen Wali (Pinned) -->
+                <div class="pinned-item" onclick="window.location.href='chat-dosen.html'">
+                    <div class="pinned-avatar-wrapper">
+                        <div class="pinned-avatar" style="background-color: #f3e5f5; color: #8e24aa;">DW</div>
+                        <div class="online-dot"></div>
+                    </div>
+                    <div class="pinned-name">Dosen Wali</div>
+                </div>
+
+                <!-- Edes (Direct) -->
+                <div class="pinned-item">
+                    <div class="pinned-avatar-wrapper">
+                        <div class="pinned-avatar" style="background-color: #fff3e0; color: #ef6c00;">
+                            <img src="https://ui-avatars.com/api/?name=Elga&background=ffecb3&color=ff6f00" alt="E"
+                                style="width:100%; height:100%; border-radius:50%;">
+                        </div>
+                    </div>
+                    <div class="pinned-name">Elga</div>
+                </div>
+            </div>
+
+            <!-- Recent Messages List (Unified) -->
+            <div class="recent-section">
+                <div class="section-label">Recent</div>
+
+                <!-- Group Chat -->
+                <div class="chat-item" onclick="window.location.href='chat-group.html'">
+                    <div class="chat-avatar" style="background-color: #e0f2f1; color: #00695c;">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            Tugas DAMP Kelompok 3
+                            <span class="chat-time">13:30</span>
+                        </div>
+                        <div class="chat-preview">
+                            <span style="font-weight: 600; color: var(--text-dark);">You: Oke sip, bagian UI sama
+                                visual...</span>
+                            <div class="unread-badge">3</div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Group -->
-            <div class="chat-section">
-                <div class="chat-section-header collapsed" onclick="toggleSection(this)">
-                    <i class="fa-solid fa-caret-down"></i>
-                    <span>Group (0)</span>
-                </div>
-                <div class="chat-list hidden">
-                    <div style="padding: 20px; text-align: center; color: var(--text-light); font-size: 0.9rem;">
-                        No group messages
-                    </div>
-                </div>
-            </div>
-
-            <!-- Private -->
-            <div class="chat-section">
-                <div class="chat-section-header" onclick="toggleSection(this)">
-                    <i class="fa-solid fa-caret-down"></i>
-                    <span>Private (1)</span>
-                </div>
-                <div class="chat-list">
-                    <div class="chat-item" onclick="window.location.href='chat-conversation.html'">
-                        <div class="chat-avatar" style="background-color: #e0e0e0; color: #fff;">
-                            <i class="fa-solid fa-user" style="color: #9e9e9e;"></i>
+                <!-- Dosen Wali (Duplicate for list access too, simpler) -->
+                <div class="chat-item" onclick="window.location.href='chat-dosen.html'">
+                    <div class="chat-avatar" style="background-color: #f3e5f5; color: #8e24aa;">DW</div>
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            Dosen Wali
+                            <span class="chat-time">09:30</span>
                         </div>
-                        <div class="chat-info">
-                            <div class="chat-name">
-                                Muhammad Luqman IF
-                                <span class="chat-time">18:24</span>
-                            </div>
-                            <div class="chat-preview">
-                                <span>You: euy</span>
-                                <i class="fa-solid fa-chevron-right chat-chevron"></i>
-                            </div>
+                        <div class="chat-preview">
+                            <span>Oke, kalau ada kendala sistem lapor ke...</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Private Chat -->
+                <div class="chat-item" onclick="window.location.href='chat-conversation.html'">
+                    <div class="chat-avatar" style="background-color: #f5f5f5;">
+                        <i class="fa-solid fa-user" style="color: #bdbdbd;"></i>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            Muhammad Luqman IF
+                            <span class="chat-time">18:24</span>
+                        </div>
+                        <div class="chat-preview">
+                            <span>You: euy</span>
+                            <i class="fa-solid fa-check-double"
+                                style="font-size: 0.7rem; color: var(--primary-color);"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Random other chat -->
+                <div class="chat-item">
+                    <div class="chat-avatar" style="background-color: #e3f2fd; color: #1976d2;">KA</div>
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            Kang Aslab
+                            <span class="chat-time">Mon</span>
+                        </div>
+                        <div class="chat-preview">
+                            <span>Jangan lupa asistensi besok ya</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </main>
+
+        <!-- FAB for New Chat -->
+        <div class="floating-fab" onclick="window.location.href='contacts.html'">
+            <i class="fa-solid fa-plus"></i>
+        </div>
 
         <!-- Bottom Navigation -->
         <nav class="bottom-nav">
@@ -244,14 +393,6 @@
             </a>
         </nav>
     </div>
-
-    <script>
-        function toggleSection(header) {
-            header.classList.toggle('collapsed');
-            const list = header.nextElementSibling;
-            list.classList.toggle('hidden');
-        }
-    </script>
 </body>
 
 </html>
