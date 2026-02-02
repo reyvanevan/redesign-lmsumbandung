@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - DAMP - LMS Mobile</title>
+    <link rel="stylesheet" href="globals.css?v=2">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <button class="icon-btn back-btn" onclick="history.back()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1 class="page-title">Profile</h1>
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fa-solid fa-gear"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" style="padding-bottom: 100px;">
+
+            <!-- Profile Header -->
+            <div class="profile-header-section">
+                <div class="profile-avatar-large">MI</div>
+                <h2 class="profile-name">M. REYVAN PURNAMA IF</h2>
+                <button class="btn-small-outline" onclick="toggleDrawer()"><i class="fa-regular fa-envelope"></i>
+                    Message</button>
+            </div>
+
+            <!-- User Details Card -->
+            <div class="section">
+                <h3 class="section-title">User Details</h3>
+                <div class="info-card">
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="info-content">
+                            <div class="info-label">Email address</div>
+                            <div class="info-value">reyvan.evann@gmail.com</div>
+                            <div class="info-meta">Visible to other course participants</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="info-content">
+                            <div class="info-label">Timezone</div>
+                            <div class="info-value">Asia/Jakarta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login Activity -->
+            <div class="section">
+                <h3 class="section-title">Login Activity</h3>
+                <div class="info-card">
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <div class="info-content">
+                            <div class="info-label">First access to site</div>
+                            <div class="info-value">Wed, 2 Oct 2024, 3:15 PM</div>
+                            <div class="info-meta">1 year 123 days</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                        <div class="info-content">
+                            <div class="info-label">Last access to site</div>
+                            <div class="info-value">Mon, 2 Feb 2026, 7:23 PM</div>
+                            <div class="info-meta">Now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Details -->
+            <div class="section">
+                <h3 class="section-title">Course Profiles</h3>
+                <div class="menu-list">
+                    <a href="course-detail.html" class="menu-item">
+                        <span>IF22A - Desain Antar Muka Produk Digital</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>IF22A - Digitalisasi UMKM</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>IF22A - Pengantar Deep Learning</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span>IF23C - Manajemen Basis Data</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Reports & Misc -->
+            <div class="section">
+                <h3 class="section-title">Reports</h3>
+                <div class="menu-grid">
+                    <a href="#" class="grid-item">
+                        <div class="grid-icon"><i class="fa-solid fa-chart-simple"></i></div>
+                        <span>Grades Overview</span>
+                    </a>
+                    <a href="#" class="grid-item">
+                        <div class="grid-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <span>Browser Sessions</span>
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 24px;">
+                <button class="btn-text text-danger">Log Out</button>
+            </div>
+
+        </main>
+
+        <!-- Personal Space Drawer -->
+        <div id="message-drawer" class="message-drawer">
+            <div class="drawer-header">
+                <button class="icon-btn" onclick="toggleDrawer()">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="drawer-user-info">
+                    <div class="avatar-small">MI</div>
+                    <div class="user-text">
+                        <div class="drawer-name">M. REYVAN PURNAMA IF <i class="fa-solid fa-star"
+                                style="color: var(--primary-color); font-size: 0.8rem;"></i></div>
+                        <div class="drawer-status">Online</div>
+                    </div>
+                </div>
+                <button class="icon-btn"><i class="fa-solid fa-ellipsis"></i></button>
+            </div>
+
+            <div class="drawer-body">
+                <div class="empty-state-message">
+                    <p class="space-title">Personal space</p>
+                    <p class="space-desc">Save draft messages, links, notes etc. to access later.</p>
+                </div>
+            </div>
+
+            <div class="drawer-footer">
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Write a message..." class="msg-input">
+                    <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="drawer-backdrop" class="drawer-backdrop" onclick="toggleDrawer()"></div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>Chat</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <div class="notification-badge-wrapper">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <span>Notifs</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <div class="avatar-circle">MI</div>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('message-drawer');
+            const backdrop = document.getElementById('drawer-backdrop');
+
+            if (drawer.classList.contains('open')) {
+                drawer.classList.remove('open');
+                backdrop.classList.remove('active');
+            } else {
+                drawer.classList.add('open');
+                backdrop.classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
